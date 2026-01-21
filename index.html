@@ -6,135 +6,234 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style>
+    :root {
+      --primary: #0f172a;
+      --accent: #38bdf8;
+      --text: #1f2933;
+      --light: #f8fafc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      color: #222;
+      color: var(--text);
       line-height: 1.6;
       background: #ffffff;
     }
 
     header {
-      background: #0f172a;
+      background: var(--primary);
       color: white;
-      padding: 80px 20px;
+      padding: 80px 20px 90px;
       text-align: center;
     }
 
+    header img {
+      max-width: 140px;
+      margin-bottom: 25px;
+    }
+
     header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+      font-size: 2.6rem;
+      margin-bottom: 15px;
     }
 
     header p {
       font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto 30px;
+      max-width: 620px;
+      margin: 0 auto 35px;
+      opacity: 0.95;
     }
 
     .btn {
       display: inline-block;
-      background: #38bdf8;
-      color: #0f172a;
-      padding: 12px 24px;
+      background: var(--accent);
+      color: var(--primary);
+      padding: 14px 28px;
       text-decoration: none;
       font-weight: bold;
-      border-radius: 5px;
+      border-radius: 6px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
     }
 
     section {
-      padding: 60px 20px;
-      max-width: 900px;
+      padding: 70px 20px;
+      max-width: 1000px;
       margin: auto;
     }
 
     h2 {
       font-size: 2rem;
       margin-bottom: 20px;
+      color: var(--primary);
+    }
+
+    p {
+      max-width: 750px;
     }
 
     .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 30px;
+      margin-top: 40px;
     }
 
     .card {
       border: 1px solid #e5e7eb;
-      padding: 25px;
-      border-radius: 8px;
+      padding: 28px;
+      border-radius: 10px;
+      background: #ffffff;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--primary);
+    }
+
+    .cta {
+      background: var(--light);
+      border-radius: 16px;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .cta p {
+      margin: 0 auto 30px;
     }
 
     footer {
-      background: #f8fafc;
+      background: var(--primary);
+      color: white;
+      padding: 40px 20px;
       text-align: center;
-      padding: 30px 20px;
-      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .social {
+      margin-top: 15px;
+    }
+
+    .social a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: bold;
+    }
+
+    .social svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--accent);
     }
   </style>
 </head>
 
 <body>
 
+  <!-- HEADER -->
   <header>
+    <img src="logo.png" alt="Vital Voice Copywriting logo" />
+
     <h1>Vital Voice Copywriting</h1>
     <p>
-      Clear, persuasive copy that helps businesses connect,
-      convert, and grow.
+      Strategic, human-centered copy that helps brands connect,
+      convert, and grow with clarity.
     </p>
+
     <a class="btn" href="mailto:contact@vitalvoicecopywriting.com">
-      Contact Me
+      Work With Me
     </a>
   </header>
 
+  <!-- ABOUT -->
   <section>
     <h2>What I Do</h2>
     <p>
-      I help brands find their voice and turn visitors into customers
-      through strategic, human-centered copywriting.
+      I help businesses communicate clearly and confidently through
+      thoughtful copywriting that speaks directly to the people who matter most.
     </p>
   </section>
 
+  <!-- SERVICES -->
   <section>
     <h2>Services</h2>
+
     <div class="services">
       <div class="card">
         <h3>Website Copy</h3>
         <p>
-          Clear, engaging website copy that speaks directly to your audience.
+          Clear, engaging website copy designed to guide visitors
+          and turn interest into action.
         </p>
       </div>
+
       <div class="card">
         <h3>Email Copy</h3>
         <p>
-          Emails that build trust, nurture leads, and drive action.
+          Strategic email messaging that builds trust, nurtures leads,
+          and drives conversions.
         </p>
       </div>
+
       <div class="card">
         <h3>Brand Messaging</h3>
         <p>
-          Define your voice, tone, and messaging so your brand sounds consistent.
+          Define your brand voice, tone, and messaging so everything
+          you publish sounds aligned and intentional.
         </p>
       </div>
     </div>
   </section>
 
-  <section>
+  <!-- CTA -->
+  <section class="cta">
     <h2>Let’s Work Together</h2>
     <p>
-      Ready to improve your messaging and grow your business?
-      Let’s talk.
+      If you’re ready to improve your messaging and connect more clearly
+      with your audience, let’s talk.
     </p>
+
     <a class="btn" href="mailto:contact@vitalvoicecopywriting.com">
-      Email Me
+      Contact Me
     </a>
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    © 2026 Vital Voice Copywriting ·
-    contact@vitalvoicecopywriting.com
+    <div>
+      © 2026 Vital Voice Copywriting ·
+      <a href="mailto:contact@vitalvoicecopywriting.com">
+        contact@vitalvoicecopywriting.com
+      </a>
+    </div>
+
+    <div class="social">
+      <a href="https://www.instagram.com/vitalvoice_copywriting?igsh=NmV1NWNwZzQ3YXhj"
+         target="_blank"
+         rel="noopener"
+         aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 1.5C5.27 3.5 3.5 5.27 3.5 7.75v8.5c0 2.48 1.77 4.25 4.25 4.25h8.5c2.48 0 4.25-1.77 4.25-4.25v-8.5c0-2.48-1.77-4.25-4.25-4.25h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.88a1.13 1.13 0 1 1 0 2.26 1.13 1.13 0 0 1 0-2.26z"/>
+        </svg>
+        Instagram
+      </a>
+    </div>
   </footer>
 
 </body>
 </html>
-
