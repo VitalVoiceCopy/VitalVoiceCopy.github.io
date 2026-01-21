@@ -2,31 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Vital Voice Copywriting | Klaviyo Email & SMS </title>
+  <title>Vital Voice Copywriting | Conversion-Focused Copy</title>
+  <meta name="description" content="Vital Voice Copywriting helps businesses convert more customers through clear, strategic, and results-driven copywriting." />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Email & SMS copywriting for Shopify brands using Klaviyo. Turn attention into trust, and trust into revenue." />
+  <meta name="robots" content="index, follow" />
 
   <style>
     :root {
-      --bg: #0b0b0f;
-      --text: #f5f5f7;
-      --muted: #a1a1b3;
-      --accent: #6ee7b7;
-      --card: #14141c;
-      --border: #242430;
+      --bg-light: #ffffff;
+      --text-dark: #1f2933;
+      --text-muted: #4b5563;
+      --accent: #2563eb;
+      --border-light: #e5e7eb;
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color: var(--text-dark);
+      background-color: var(--bg-light);
       line-height: 1.6;
-      overflow-x: hidden;
     }
 
     a {
@@ -34,26 +38,245 @@
       text-decoration: none;
     }
 
-    /* ===== Animations ===== */
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(18px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    img {
+      max-width: 100%;
+      height: auto;
     }
 
-    /* ===== Logo ===== */
-    .logo-wrapper {
+    header {
+      border-bottom: 1px solid var(--border-light);
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem;
       display: flex;
-      justify-content: center;
-      padding: 3rem 1.5rem 1.5rem;
-      animation: fadeUp 0.8s ease forwards;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    .logo-wrapper img {
-      height: 72px;
-      max-width: 100%
+    .nav-logo img {
+      height: 42px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 2rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.9rem 1.6rem;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .cta-button:hover {
+      opacity: 0.9;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 1rem;
+    }
+
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    section p {
+      color: var(--text-muted);
+      max-width: 800px;
+    }
+
+    .services,
+    .why-choose {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      border: 1px solid var(--border-light);
+      padding: 1.5rem;
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      margin: 0.5rem auto;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-light);
+      padding: 2rem 1rem;
+      text-align: center;
+      background: #fff;
+    }
+
+    footer img {
+      height: 36px;
+      margin-bottom: 1rem;
+    }
+
+    footer p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      margin-left: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .nav-links {
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="nav-logo">
+        <img src="logo.png" alt="Vital Voice Copywriting Logo" />
+      </div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Copy That Turns Attention Into Action</h1>
+      <p>
+        Vital Voice Copywriting helps businesses communicate clearly, connect with the right audience,
+        and convert more visitors into customers.
+      </p>
+      <a href="#contact" class="cta-button">Get in Touch</a>
+    </section>
+
+    <section id="about">
+      <h2>About Vital Voice Copywriting</h2>
+      <p>
+        Vital Voice Copywriting delivers clear, strategic messaging designed to drive measurable results.
+        Every word is crafted with purpose — aligning your brand voice, audience intent, and business goals
+        to create copy that performs.
+      </p>
+    </section>
+
+    <section id="services">
+      <h2>Services</h2>
+      <div class="services">
+        <div class="card">
+          <h3>Website Copywriting</h3>
+          <p>Clear, engaging website copy that builds trust and drives conversions.</p>
+        </div>
+        <div class="card">
+          <h3>Sales Pages</h3>
+          <p>Persuasive sales pages focused on benefits, clarity, and action.</p>
+        </div>
+        <div class="card">
+          <h3>Email Copy</h3>
+          <p>Strategic email campaigns that nurture leads and increase response.</p>
+        </div>
+        <div class="card">
+          <h3>Brand Messaging</h3>
+          <p>Consistent brand voice and messaging that resonates with your audience.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Why Choose Me</h2>
+      <div class="why-choose">
+        <div class="card">
+          <h3>Conversion-Focused</h3>
+          <p>Every project is designed with performance and outcomes in mind.</p>
+        </div>
+        <div class="card">
+          <h3>Strategic Approach</h3>
+          <p>Copy grounded in research, positioning, and clear objectives.</p>
+        </div>
+        <div class="card">
+          <h3>Audience-First</h3>
+          <p>Messaging tailored to speak directly to your ideal customers.</p>
+        </div>
+        <div class="card">
+          <h3>Results-Driven</h3>
+          <p>Focused on clarity, engagement, and measurable business impact.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:contact@vitalvoicecopywriting.com">contact@vitalvoicecopywriting.com</a></p>
+      <p>
+        <a href="https://www.instagram.com/vitalvoice_copywriting?igsh=NmV1NWNwZzQ3YXhj" target="_blank" rel="noopener">Instagram</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <img src="logo.png" alt="Vital Voice Copywriting Logo" />
+    <p>
+      © Vital Voice Copywriting
+      <a href="https://www.instagram.com/vitalvoice_copywriting?igsh=NmV1NWNwZzQ3YXhj" target="_blank" rel="noopener">Instagram</a>
+    </p>
+  </footer>
+
+</body>
+</html>
