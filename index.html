@@ -2,15 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Vital Voice Copywriting</title>
+  <title>Vital Voice Copywriting | Premium Klaviyo Email & SMS Copy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Premium email & SMS copywriting for Shopify brands using Klaviyo. Turn attention into trust, and trust into revenue." />
 
   <style>
     :root {
-      --primary: #0f172a;
-      --accent: #38bdf8;
-      --text: #1f2933;
-      --light: #f8fafc;
+      --bg: #0b0b0f;
+      --text: #f5f5f7;
+      --muted: #a1a1b3;
+      --accent: #6ee7b7;
+      --card: #14141c;
+      --border: #242430;
     }
 
     * {
@@ -19,220 +22,288 @@
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
       color: var(--text);
       line-height: 1.6;
-      background: #ffffff;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
     }
 
     header {
-      background: var(--primary);
-      color: white;
-      padding: 80px 20px 90px;
-      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
     header img {
-      max-width: 140px;
-      margin-bottom: 25px;
+      height: 48px;
     }
 
-    header h1 {
-      font-size: 2.6rem;
-      margin-bottom: 15px;
+    main {
+      overflow-x: hidden;
     }
 
-    header p {
-      font-size: 1.1rem;
-      max-width: 620px;
-      margin: 0 auto 35px;
-      opacity: 0.95;
+    .hero {
+      max-width: 900px;
+      margin: 5rem auto;
+      padding: 0 1.5rem;
+      text-align: center;
     }
 
-    .btn {
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0 auto 2.8rem;
+    }
+
+    .cta {
       display: inline-block;
+      padding: 0.95rem 1.8rem;
+      border-radius: 10px;
       background: var(--accent);
-      color: var(--primary);
-      padding: 14px 28px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 6px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      color: #0b0b0f;
+      font-weight: 600;
     }
 
     section {
-      padding: 70px 20px;
-      max-width: 1000px;
-      margin: auto;
+      max-width: 1200px;
+      margin: 6rem auto;
+      padding: 0 1.5rem;
     }
 
-    h2 {
+    section h2 {
       font-size: 2rem;
-      margin-bottom: 20px;
-      color: var(--primary);
+      margin-bottom: 1rem;
     }
 
-    p {
-      max-width: 750px;
+    section > p {
+      color: var(--muted);
+      max-width: 760px;
     }
 
-    .services {
+    .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
+      gap: 1.6rem;
+      margin-top: 3rem;
     }
 
     .card {
-      border: 1px solid #e5e7eb;
-      padding: 28px;
-      border-radius: 10px;
-      background: #ffffff;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.8rem;
     }
 
     .card h3 {
       margin-top: 0;
-      color: var(--primary);
+      margin-bottom: 0.6rem;
+      font-size: 1.1rem;
     }
 
-    .cta {
-      background: var(--light);
-      border-radius: 16px;
-      padding: 60px 20px;
-      text-align: center;
+    .card p {
+      margin: 0;
+      color: var(--muted);
     }
 
-    .cta p {
-      margin: 0 auto 30px;
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 6rem 0;
     }
 
     footer {
-      background: var(--primary);
-      color: white;
-      padding: 40px 20px;
+      border-top: 1px solid var(--border);
+      padding: 3rem 1.5rem;
       text-align: center;
+      color: var(--muted);
     }
 
     footer a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .social {
-      margin-top: 15px;
-    }
-
-    .social a {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: bold;
-    }
-
-    .social svg {
-      width: 20px;
-      height: 20px;
-      fill: var(--accent);
+      margin: 0 0.5rem;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
   <header>
-    <img src="logo.png" alt="Vital Voice Copywriting logo" />
-
-    <h1>Vital Voice Copywriting</h1>
-    <p>
-      Strategic, human-centered copy that helps brands connect,
-      convert, and grow with clarity.
-    </p>
-
-    <a class="btn" href="mailto:contact@vitalvoicecopywriting.com">
-      Work With Me
+    <img src="logo.png" alt="Vital Voice Copywriting Logo" />
+    <a href="https://www.instagram.com/vitalvoice_copywriting?igsh=NmV1NWNwZzQ3YXhj" target="_blank">
+      Instagram
     </a>
   </header>
 
-  <!-- ABOUT -->
-  <section>
-    <h2>What I Do</h2>
-    <p>
-      I help businesses communicate clearly and confidently through
-      thoughtful copywriting that speaks directly to the people who matter most.
-    </p>
-  </section>
+  <main>
 
-  <!-- SERVICES -->
-  <section>
-    <h2>Services</h2>
+    <!-- HERO -->
+    <section class="hero">
+      <h1>
+        Premium email & SMS copy<br>
+        for Shopify brands that want more revenue
+      </h1>
 
-    <div class="services">
-      <div class="card">
-        <h3>Website Copy</h3>
-        <p>
-          Clear, engaging website copy designed to guide visitors
-          and turn interest into action.
-        </p>
+      <p>
+        Vital Voice Copywriting helps Shopify businesses using Klaviyo
+        turn underperforming email lists and ignored SMS campaigns
+        into consistent, predictable revenue —
+        without sounding pushy, desperate, or generic.
+      </p>
+
+      <a class="cta" href="https://www.instagram.com/vitalvoice_copywriting?igsh=NmV1NWNwZzQ3YXhj" target="_blank">
+        Start a conversation
+      </a>
+    </section>
+
+    <!-- WHAT YOU DO -->
+    <section>
+      <h2>What we do</h2>
+      <p>
+        We write high-intent copy for ecommerce brands selling products online.
+        Every email and message is written to move customers from interest,
+        to trust, to action — at the right time, with the right message.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Klaviyo Email Flows & Campaigns</h3>
+          <p>
+            Welcome, abandoned cart, post-purchase, win-back, and revenue campaigns
+            built to increase lifetime value — not just open rates.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>SMS Copy That Converts</h3>
+          <p>
+            Short, intentional SMS messages that feel personal,
+            respect your customer’s attention,
+            and drive action without burning trust.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Product & Brand Messaging</h3>
+          <p>
+            Clear positioning that communicates why your product matters
+            and why it’s worth buying — now, not later.
+          </p>
+        </div>
       </div>
+    </section>
 
-      <div class="card">
-        <h3>Email Copy</h3>
-        <p>
-          Strategic email messaging that builds trust, nurtures leads,
-          and drives conversions.
-        </p>
+    <!-- WHY YOU -->
+    <section>
+      <h2>Why Vital Voice</h2>
+      <p>
+        Most ecommerce brands don’t have a traffic problem —
+        they have a messaging problem.
+        We focus on the words your customers actually need to hear
+        to feel confident buying from you.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Customer psychology first</h3>
+          <p>
+            We write from the buyer’s perspective,
+            addressing objections before they become reasons not to buy.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Built specifically for Klaviyo</h3>
+          <p>
+            Every piece of copy is written with segmentation,
+            timing, and automation in mind.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Revenue-focused execution</h3>
+          <p>
+            Pretty words don’t pay the bills.
+            Conversions do.
+          </p>
+        </div>
       </div>
+    </section>
 
-      <div class="card">
-        <h3>Brand Messaging</h3>
-        <p>
-          Define your brand voice, tone, and messaging so everything
-          you publish sounds aligned and intentional.
-        </p>
+    <!-- WHO NOT FOR -->
+    <section>
+      <h2>Who this is not for</h2>
+      <p>
+        We’re not the right fit for everyone — and that’s intentional.
+        Vital Voice Copywriting is <strong>not</strong> for you if:
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>You want “cheap” copy</h3>
+          <p>
+            If price matters more than performance,
+            we won’t be aligned.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>You’re not using Klaviyo</h3>
+          <p>
+            Our systems, strategy, and copy are built specifically
+            for Shopify brands using Klaviyo.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>You want instant results without strategy</h3>
+          <p>
+            Sustainable revenue comes from understanding your customer —
+            not hacks or shortcuts.
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA -->
-  <section class="cta">
-    <h2>Let’s Work Together</h2>
-    <p>
-      If you’re ready to improve your messaging and connect more clearly
-      with your audience, let’s talk.
-    </p>
+    <!-- FINAL CTA -->
+    <section class="hero">
+      <h2>
+        If you’re serious about growth,<br>
+        we should talk
+      </h2>
 
-    <a class="btn" href="mailto:contact@vitalvoicecopywriting.com">
-      Contact Me
-    </a>
-  </section>
+      <p>
+        If you run a Shopify store, use Klaviyo,
+        and want email & SMS to become a real revenue channel —
+        let’s see if we’re a fit.
+      </p>
 
-  <!-- FOOTER -->
+      <a class="cta" href="https://www.instagram.com/vitalvoice_copywriting?igsh=NmV1NWNwZzQ3YXhj" target="_blank">
+        Message us on Instagram
+      </a>
+    </section>
+
+  </main>
+
   <footer>
-    <div>
-      © 2026 Vital Voice Copywriting ·
-      <a href="mailto:contact@vitalvoicecopywriting.com">
-        contact@vitalvoicecopywriting.com
-      </a>
-    </div>
-
-    <div class="social">
-      <a href="https://www.instagram.com/vitalvoice_copywriting?igsh=NmV1NWNwZzQ3YXhj"
-         target="_blank"
-         rel="noopener"
-         aria-label="Instagram">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 1.5C5.27 3.5 3.5 5.27 3.5 7.75v8.5c0 2.48 1.77 4.25 4.25 4.25h8.5c2.48 0 4.25-1.77 4.25-4.25v-8.5c0-2.48-1.77-4.25-4.25-4.25h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.88a1.13 1.13 0 1 1 0 2.26 1.13 1.13 0 0 1 0-2.26z"/>
-        </svg>
-        Instagram
-      </a>
-    </div>
+    © 2026 Vital Voice Copywriting  
+    <br />
+    <a href="https://www.instagram.com/vitalvoice_copywriting?igsh=NmV1NWNwZzQ3YXhj" target="_blank">
+      Instagram
+    </a>
   </footer>
 
 </body>
