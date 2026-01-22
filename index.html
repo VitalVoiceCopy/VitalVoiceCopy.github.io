@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Vital Voice Copywriting | Conversion-Focused Copy</title>
-  <meta name="description" content="Vital Voice Copywriting helps businesses convert more customers through clear, strategic, and results-driven copywriting." />
+  <title>Vital Voice Copywriting | Klaviyo Email & SMS for Shopify Brands</title>
+
+  <meta name="description" content="Vital Voice Copywriting helps Shopify brands using Klaviyo increase revenue through high-converting email and SMS flows, segmentation, and retention strategy." />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="Klaviyo copywriter, Shopify email marketing, ecommerce email marketing, Klaviyo flows, email SMS marketing Shopify" />
 
   <style>
     :root {
@@ -78,10 +80,31 @@
       color: var(--accent);
     }
 
+    /* Animations */
+    .fade-up {
+      animation: fadeUp 0.8s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.4s; }
+    .delay-3 { animation-delay: 0.6s; }
+
     .hero {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 4rem 1rem;
+      padding: 4.5rem 1rem;
       text-align: center;
     }
 
@@ -94,7 +117,7 @@
     .hero p {
       font-size: 1.1rem;
       color: var(--text-muted);
-      max-width: 720px;
+      max-width: 760px;
       margin: 0 auto 2rem;
     }
 
@@ -102,13 +125,9 @@
       display: inline-block;
       background: var(--accent);
       color: #fff;
-      padding: 0.9rem 1.6rem;
+      padding: 0.9rem 1.8rem;
       border-radius: 6px;
       font-weight: 600;
-    }
-
-    .cta-button:hover {
-      opacity: 0.9;
     }
 
     section {
@@ -118,13 +137,13 @@
     }
 
     section h2 {
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       margin-bottom: 1rem;
     }
 
     section p {
       color: var(--text-muted);
-      max-width: 800px;
+      max-width: 820px;
     }
 
     .services,
@@ -137,22 +156,9 @@
 
     .card {
       border: 1px solid var(--border-light);
-      padding: 1.5rem;
+      padding: 1.6rem;
       border-radius: 8px;
       background: #fff;
-    }
-
-    .card h3 {
-      margin-bottom: 0.5rem;
-      font-size: 1.1rem;
-    }
-
-    .contact {
-      text-align: center;
-    }
-
-    .contact p {
-      margin: 0.5rem auto;
     }
 
     footer {
@@ -171,112 +177,138 @@
       color: var(--text-muted);
       font-size: 0.9rem;
     }
-
-    footer a {
-      margin-left: 0.5rem;
-    }
-
-    @media (max-width: 600px) {
-      .nav-links {
-        gap: 1rem;
-      }
-    }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <nav>
-      <div class="nav-logo">
-        <img src="logo.png" alt="Vital Voice Copywriting Logo" />
-      </div>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
-  </header>
+<header>
+  <nav>
+    <div class="nav-logo">
+      <img src="logo.png" alt="Vital Voice Copywriting Logo" />
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#audit">Free Audit</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
 
-  <main>
-    <section class="hero">
-      <h1>Copy That Turns Attention Into Action</h1>
-      <p>
-        Vital Voice Copywriting helps businesses communicate clearly, connect with the right audience,
-        and convert more visitors into customers.
-      </p>
-      <a href="#contact" class="cta-button">Get in Touch</a>
-    </section>
+<main>
 
-    <section id="about">
-      <h2>About Vital Voice Copywriting</h2>
-      <p>
-        Vital Voice Copywriting delivers clear, strategic messaging designed to drive measurable results.
-        Every word is crafted with purpose — aligning your brand voice, audience intent, and business goals
-        to create copy that performs.
-      </p>
-    </section>
-
-    <section id="services">
-      <h2>Services</h2>
-      <div class="services">
-        <div class="card">
-          <h3>Website Copywriting</h3>
-          <p>Clear, engaging website copy that builds trust and drives conversions.</p>
-        </div>
-        <div class="card">
-          <h3>Sales Pages</h3>
-          <p>Persuasive sales pages focused on benefits, clarity, and action.</p>
-        </div>
-        <div class="card">
-          <h3>Email Copy</h3>
-          <p>Strategic email campaigns that nurture leads and increase response.</p>
-        </div>
-        <div class="card">
-          <h3>Brand Messaging</h3>
-          <p>Consistent brand voice and messaging that resonates with your audience.</p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Why Choose Me</h2>
-      <div class="why-choose">
-        <div class="card">
-          <h3>Conversion-Focused</h3>
-          <p>Every project is designed with performance and outcomes in mind.</p>
-        </div>
-        <div class="card">
-          <h3>Strategic Approach</h3>
-          <p>Copy grounded in research, positioning, and clear objectives.</p>
-        </div>
-        <div class="card">
-          <h3>Audience-First</h3>
-          <p>Messaging tailored to speak directly to your ideal customers.</p>
-        </div>
-        <div class="card">
-          <h3>Results-Driven</h3>
-          <p>Focused on clarity, engagement, and measurable business impact.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:contact@vitalvoicecopywriting.com">contact@vitalvoicecopywriting.com</a></p>
-      <p>
-        <a href="https://www.instagram.com/vitalvoice_copywriting?igsh=NmV1NWNwZzQ3YXhj" target="_blank" rel="noopener">Instagram</a>
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    <img src="logo.png" alt="Vital Voice Copywriting Logo" />
-    <p>
-      © Vital Voice Copywriting
-      <a href="https://www.instagram.com/vitalvoice_copywriting?igsh=NmV1NWNwZzQ3YXhj" target="_blank" rel="noopener">Instagram</a>
+  <section class="hero">
+    <h1 class="fade-up">Are You Leaving Revenue on the Table With Your Shopify Emails?</h1>
+    <p class="fade-up delay-1">
+      I help Shopify brands using Klaviyo turn email and SMS into a predictable revenue channel
+      through smarter segmentation, high-intent flows, and campaigns that convert.
     </p>
-  </footer>
+    <a href="#audit" class="cta-button fade-up delay-2">Get a Free Klaviyo Audit</a>
+  </section>
+
+  <section id="about">
+    <h2 class="fade-up">About Vital Voice Copywriting</h2>
+    <p class="fade-up delay-1">
+      Vital Voice Copywriting helps Shopify brands generate more revenue from the traffic they already have.
+      Instead of relying on paid ads, I focus on building and optimizing Klaviyo email and SMS systems —
+      including welcome flows, abandoned cart and browse abandonment, post-purchase sequences,
+      win-back campaigns, and advanced segmentation — so growth compounds without increasing ad spend.
+    </p>
+  </section>
+
+  <section id="services">
+    <h2 class="fade-up">Services for Shopify & Klaviyo Users</h2>
+    <div class="services fade-up delay-1">
+      <div class="card">
+        <h3>Klaviyo Flow Setup & Optimization</h3>
+        <p>High-converting welcome, abandoned cart, browse abandon, post-purchase, and win-back flows.</p>
+      </div>
+      <div class="card">
+        <h3>Email & SMS Campaign Strategy</h3>
+        <p>Revenue-focused campaigns built around buyer intent, timing, and segmentation.</p>
+      </div>
+      <div class="card">
+        <h3>Segmentation & Targeting</h3>
+        <p>Send the right message to the right customer at the right time.</p>
+      </div>
+      <div class="card">
+        <h3>Retention & LTV Growth</h3>
+        <p>Turn one-time buyers into repeat customers and long-term brand advocates.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="audit">
+    <h2 class="fade-up">Free Klaviyo Revenue Audit</h2>
+    <p class="fade-up delay-1">
+      Submit your details below and I’ll personally review your Klaviyo setup to uncover
+      missed revenue opportunities — no ads, no fluff.
+    </p>
+
+    <div class="fade-up delay-2" style="margin-top: 2rem;">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLScEB7J31MyejRpX2ks1K9rDO110BzMRxAignNQREj_4UfHJJw/viewform?embedded=true"
+        width="100%"
+        height="750"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0">
+        Loading…
+      </iframe>
+    </div>
+
+    <p style="margin-top: 2rem;">
+      Prefer to talk it through?
+      <a href="https://calendly.com/YOUR-CALENDLY-LINK" target="_blank" rel="noopener">
+        Book a free strategy call →
+      </a>
+    </p>
+  </section>
+
+  <section>
+    <h2 class="fade-up">Why Choose Me</h2>
+    <div class="why-choose fade-up delay-1">
+      <div class="card">
+        <h3>Fractional CMO-Level Copy Mentoring</h3>
+        <p>Strategic guidance beyond copy — focused on growth and revenue systems.</p>
+      </div>
+      <div class="card">
+        <h3>Klaviyo-First Expertise</h3>
+        <p>Deep understanding of Klaviyo, Shopify data, and ecommerce behavior.</p>
+      </div>
+      <div class="card">
+        <h3>Built for Ecommerce Reality</h3>
+        <p>No generic advice — everything is tailored to real ecommerce constraints.</p>
+      </div>
+      <div class="card">
+        <h3>Long-Term Revenue Systems</h3>
+        <p>Systems that compound over time instead of short-term spikes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="text-align:center;">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:contact@vitalvoicecopywriting.com">contact@vitalvoicecopywriting.com</a></p>
+    <p>
+      <a href="https://www.instagram.com/vitalvoice_copywriting?igsh=NmV1NWNwZzQ3YXhj" target="_blank" rel="noopener">
+        Instagram
+      </a>
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <img src="logo.png" alt="Vital Voice Copywriting Logo" />
+  <p>
+    © Vital Voice Copywriting
+    <a href="https://www.instagram.com/vitalvoice_copywriting?igsh=NmV1NWNwZzQ3YXhj" target="_blank" rel="noopener">
+      Instagram
+    </a>
+  </p>
+</footer>
 
 </body>
 </html>
