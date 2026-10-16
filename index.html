@@ -225,7 +225,7 @@
     .principles { list-style: none; margin-top: 2.2rem; display: grid; gap: 1.6rem; }
     .principles h3 { font-size: 1.15rem; font-weight: 700; }
     .principles p { color: var(--slate); margin-top: .3rem; }
-    .principles-row { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+    .principles-row { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; max-width: 900px; }
     .principles-row li { border-top: 1px solid var(--line); padding-top: 1.3rem; }
 
     /* ── Lead magnet ── */
@@ -693,10 +693,6 @@
         <p>Every email is written from your reviews, support tickets and product data, then designed around the words. No recycled templates.</p>
       </li>
       <li>
-        <h3>You talk to the strategist</h3>
-        <p>The person on your calls is the person planning your account and editing every email before it's scheduled.</p>
-      </li>
-      <li>
         <h3>Measured in revenue</h3>
         <p>We report on flow and campaign revenue from Klaviyo every month. Open rates are a diagnostic, not the goal.</p>
       </li>
@@ -738,7 +734,7 @@
       </details>
       <details>
         <summary>What size brands do you work with?</summary>
-        <p>Shopify brands doing roughly $30k to $500k a month. Below that, there usually isn't enough traffic for flows to make a big difference. Above it, you likely need an in-house team.</p>
+        <p>Shopify brands doing $30k a month or more. Below that, there usually isn't enough traffic for flows to make a big difference.</p>
       </details>
       <details>
         <summary>Do we need to be on Klaviyo already?</summary>
@@ -1020,7 +1016,9 @@
     if (current < steps.length - 1) { if (stepValid(current)) show(current + 1); return; }
     if (!validContact()) return;
     const d = Object.fromEntries(new FormData(form));
-    const qualified = d.revenue !== 'Under $30k' && d.klaviyo !== 'No plans' && d.timing !== 'Just exploring';
+    // Brands over $500k/month always qualify, whatever their other answers.
+    const qualified = d.revenue === 'Over $500k' ||
+      (d.revenue !== 'Under $30k' && d.klaviyo !== 'No plans' && d.timing !== 'Just exploring');
     saveQualifier(d, qualified);
     qualified ? showBooking(d) : showNotYet(d);
   });
