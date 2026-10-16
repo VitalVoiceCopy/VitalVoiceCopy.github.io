@@ -26,7 +26,8 @@
       --line: #DFE3EA;       /* borders on paper */
       --cobalt: #4B2FB8;     /* actions, editor's notes */
       --cobalt-dark: #3A2296;
-      --highlight: #FFE36E;  /* highlighter marks only */
+      --highlight: #C9B8FF;  /* soft lavender accent on ink */
+      --lilac-wash: #EEE8FF; /* lead magnet panel */
       --on-ink-muted: #AEB8CC;
 
       --sans: 'Schibsted Grotesk', system-ui, sans-serif;
@@ -260,13 +261,13 @@
 
     /* ── Lead magnet ── */
     .magnet {
-      background: var(--highlight);
+      background: var(--lilac-wash);
       border-radius: var(--radius-m);
       padding: clamp(2rem, 5vw, 3.5rem);
       display: grid; grid-template-columns: 1.1fr 1fr; gap: 2.5rem; align-items: center;
     }
     .magnet h2 { max-width: 14ch; }
-    .magnet .lede { color: #3B3A2A; }
+    .magnet .lede { color: #463E6B; }
     .signup { display: grid; gap: .75rem; }
     .signup label { font-weight: 600; font-size: .92rem; display: grid; gap: .35rem; }
     .signup input {
@@ -276,10 +277,10 @@
     }
     .signup .btn { width: 100%; background: var(--ink); color: var(--white); }
     .signup .btn:hover { background: #000; }
-    .signup small { font-size: .85rem; color: #3B3A2A; }
+    .signup small { font-size: .85rem; color: #463E6B; }
 
     .signup-done h3 { font-size: 1.5rem; letter-spacing: -0.02em; }
-    .signup-done p { margin-top: .5rem; color: #3B3A2A; max-width: 40ch; }
+    .signup-done p { margin-top: .5rem; color: #463E6B; max-width: 40ch; }
     .signup-done { outline: none; animation: qIn .45s var(--ease-out, ease) both; }
     .signup .btn[disabled] { opacity: .6; cursor: progress; }
     .signup input[aria-invalid="true"] { border-color: #B42318; }
