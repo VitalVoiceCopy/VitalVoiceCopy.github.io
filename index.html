@@ -289,6 +289,55 @@
     .calendly-frame { width: 100%; height: 700px; border: 0; display: block; }
     .booking-panel.loaded { padding: 0; overflow: hidden; }
 
+
+    /* ── Qualifying form ── */
+    .q-progress { height: 4px; background: var(--line); border-radius: 4px; overflow: hidden; }
+    .q-progress span { display: block; height: 100%; width: 20%; background: var(--cobalt); border-radius: 4px; transition: width .5s var(--ease-out, ease); }
+    .q-count { font-size: .88rem; color: var(--slate); margin-top: .9rem; }
+    .q-step { border: 0; margin-top: .4rem; }
+    .q-step[hidden] { display: none; }
+    .q-step legend { font-size: 1.3rem; font-weight: 700; letter-spacing: -0.015em; line-height: 1.3; padding: 0; margin-bottom: 1.1rem; outline: none; }
+    .q-step .hint { color: var(--slate); font-size: .95rem; margin: -.5rem 0 1rem; }
+    .choice { display: block; position: relative; margin-top: .6rem; cursor: pointer; }
+    .choice input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+    .choice span {
+      display: flex; align-items: center; gap: .8rem;
+      padding: .95rem 1rem; border: 1.5px solid var(--line); border-radius: var(--radius-s);
+      font-weight: 500; transition: border-color .2s ease, background-color .2s ease;
+    }
+    .choice span::before {
+      content: ''; width: 1.05rem; height: 1.05rem; flex-shrink: 0; border-radius: 50%;
+      border: 2px solid #A3ABBA; transition: border-color .2s ease, box-shadow .2s ease;
+    }
+    .choice:hover span { border-color: #B9C0CC; }
+    .choice input:checked + span { border-color: var(--cobalt); background: #F3F0FC; }
+    .choice input:checked + span::before { border-color: var(--cobalt); box-shadow: inset 0 0 0 3.5px #fff, inset 0 0 0 10px var(--cobalt); }
+    .choice input:focus-visible + span { outline: 3px solid var(--cobalt); outline-offset: 2px; }
+    .q-field { display: grid; gap: .35rem; margin-top: .85rem; font-weight: 600; font-size: .92rem; }
+    .q-field input {
+      font: 400 1rem var(--sans); color: var(--ink); padding: .9rem 1rem;
+      border: 1.5px solid var(--line); border-radius: var(--radius-s); background: var(--white);
+    }
+    .q-field input:focus { border-color: var(--cobalt); outline: none; box-shadow: 0 0 0 3px rgba(75,47,184,.18); }
+    .q-field input[aria-invalid="true"] { border-color: #B42318; }
+    .q-error { color: #B42318; font-weight: 500; font-size: .88rem; }
+    .q-nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1.5rem; }
+    .q-nav .btn { margin-top: 0; width: auto; flex: 1; max-width: 240px; margin-left: auto; }
+    .q-nav .btn[disabled] { opacity: .45; cursor: not-allowed; transform: none; box-shadow: none; }
+    .q-back { background: none; border: 0; font: 600 .95rem var(--sans); color: var(--slate); cursor: pointer; padding: .6rem 0; }
+    .q-back:hover { color: var(--ink); }
+    .q-back[hidden] { display: none; }
+    .q-anim { animation: qIn .45s var(--ease-out, ease) both; }
+    @keyframes qIn { from { opacity: 0; transform: translateX(14px); } to { opacity: 1; transform: none; } }
+    .q-result h3 { font-size: 1.35rem; letter-spacing: -0.015em; }
+    .q-result p { color: var(--slate); margin-top: .5rem; }
+    .q-result .btn { margin-top: 1.4rem; width: 100%; }
+    .q-result .alt { font-size: .92rem; margin-top: 1rem; color: var(--slate); }
+    .q-result .alt span { color: var(--ink); font-weight: 600; user-select: all; }
+    .q-restart { background: none; border: 0; color: var(--cobalt); font: 600 .92rem var(--sans); cursor: pointer; padding: 0; text-decoration: underline; }
+    .q-ok-head { padding: 1.6rem 1.8rem 1rem; }
+    .q-ok-badge { display: inline-flex; align-items: center; gap: .45rem; font-weight: 600; font-size: .9rem; color: #1E6B45; background: #E7F5EC; border-radius: 100px; padding: .3rem .8rem; margin-bottom: .8rem; }
+
     /* ── Footer ── */
     .site-footer { background: var(--ink); color: var(--on-ink-muted); padding: 3rem 0 2.5rem; border-top: 1px solid var(--ink-2); font-size: .95rem; }
     .site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem 3rem; }
@@ -429,7 +478,7 @@
       <a href="#services">Services</a>
       <a href="#samples">Sample emails</a>
       <a href="#faq">FAQ</a>
-      <a href="#audit" class="btn btn-primary">Book your free audit</a>
+      <a href="#audit" class="btn btn-primary">Get your free audit</a>
     </nav>
   </div>
 </header>
@@ -444,10 +493,10 @@
       <h1>You paid to acquire them. We write the emails that bring them back.</h1>
       <p class="lede">We plan, write and build the flows, campaigns and segments that turn first orders into repeat revenue. Copy comes first, because that's what your customers actually read.</p>
       <div class="hero-actions">
-        <a href="#audit" class="btn btn-primary">Book your free Klaviyo audit</a>
+        <a href="#audit" class="btn btn-primary">See if you qualify for a free audit</a>
         <a href="#samples" class="btn btn-ghost">See sample emails</a>
       </div>
-      <p class="reassure">A 30-minute call. We review your Klaviyo account before we speak, and you keep the findings whether or not we work together.</p>
+      <p class="reassure">Four quick questions, then a 30-minute call. We review your Klaviyo account before we speak, and you keep the findings either way.</p>
     </div>
 
     <div class="annotated" id="annotated">
@@ -611,8 +660,8 @@
     <div class="steps">
       <div class="step">
         <div class="step-n">1</div>
-        <h3>Book a time</h3>
-        <p>Pick a 30-minute slot and give us view access to your Klaviyo account. We review it before the call.</p>
+        <h3>Answer four questions</h3>
+        <p>Tell us your revenue, platform and timing. If it's a fit, pick a 30-minute slot and give us view access to Klaviyo so we can review it first.</p>
       </div>
       <div class="step">
         <div class="step-n">2</div>
@@ -706,7 +755,7 @@
   <div class="wrap">
     <div>
       <h2>Find out what your Klaviyo account is missing</h2>
-      <p class="lede">Book a free 30-minute audit. We review your account before the call and show you the three changes we'd make first.</p>
+      <p class="lede">Answer four quick questions to check it's a fit, then pick a time. We review your account before the call and show you the three changes we'd make first.</p>
       <ul class="checklist">
         <li>Flow-by-flow review of what's live and what's missing</li>
         <li>Segmentation and list health check</li>
@@ -715,10 +764,59 @@
       </ul>
     </div>
     <div class="booking-panel" id="bookingPanel">
-      <h3>Pick a time that suits you</h3>
-      <p>The booking calendar opens here. Times show in your own time zone.</p>
-      <button class="btn btn-primary" id="loadCalendly" type="button">Show available times</button>
-      <p class="alt">Prefer email? <a href="mailto:contact@vitalvoicecopywriting.com">contact@vitalvoicecopywriting.com</a></p>
+      <form id="qualify" novalidate>
+        <div class="q-progress" aria-hidden="true"><span id="qBar"></span></div>
+        <p class="q-count" id="qCount" aria-live="polite">Question 1 of 5</p>
+
+        <fieldset class="q-step" data-step="1">
+          <legend tabindex="-1">Roughly how much does your Shopify store make a month?</legend>
+          <label class="choice"><input type="radio" name="revenue" value="Under $30k" /><span>Under $30k</span></label>
+          <label class="choice"><input type="radio" name="revenue" value="$30k–$100k" /><span>$30k–$100k</span></label>
+          <label class="choice"><input type="radio" name="revenue" value="$100k–$500k" /><span>$100k–$500k</span></label>
+          <label class="choice"><input type="radio" name="revenue" value="Over $500k" /><span>Over $500k</span></label>
+        </fieldset>
+
+        <fieldset class="q-step" data-step="2" hidden>
+          <legend tabindex="-1">Are you on Klaviyo?</legend>
+          <label class="choice"><input type="radio" name="klaviyo" value="Yes, using it now" /><span>Yes, we use it now</span></label>
+          <label class="choice"><input type="radio" name="klaviyo" value="Moving within 60 days" /><span>We're moving to it in the next 60 days</span></label>
+          <label class="choice"><input type="radio" name="klaviyo" value="No plans" /><span>No, and no plans to</span></label>
+        </fieldset>
+
+        <fieldset class="q-step" data-step="3" hidden>
+          <legend tabindex="-1">Who looks after email day to day?</legend>
+          <label class="choice"><input type="radio" name="role" value="Founder" /><span>Me, I'm the founder</span></label>
+          <label class="choice"><input type="radio" name="role" value="Owns email" /><span>Me, I run email or retention</span></label>
+          <label class="choice"><input type="radio" name="role" value="Someone else" /><span>Someone else on the team</span></label>
+        </fieldset>
+
+        <fieldset class="q-step" data-step="4" hidden>
+          <legend tabindex="-1">If the audit finds gaps, when would you want them fixed?</legend>
+          <label class="choice"><input type="radio" name="timing" value="Next 2 months" /><span>In the next two months</span></label>
+          <label class="choice"><input type="radio" name="timing" value="Later this year" /><span>Later this year</span></label>
+          <label class="choice"><input type="radio" name="timing" value="Just exploring" /><span>I'm just exploring for now</span></label>
+        </fieldset>
+
+        <fieldset class="q-step" data-step="5" hidden>
+          <legend tabindex="-1">Where should we send the booking details?</legend>
+          <label class="q-field" for="qName">First name
+            <input id="qName" name="name" type="text" autocomplete="given-name" required />
+          </label>
+          <label class="q-field" for="qEmail">Work email
+            <input id="qEmail" name="email" type="email" autocomplete="email" required />
+          </label>
+          <label class="q-field" for="qStore">Store URL
+            <input id="qStore" name="store" type="text" inputmode="url" placeholder="yourbrand.com" required />
+          </label>
+          <p class="q-error" id="qError" role="alert" hidden></p>
+        </fieldset>
+
+        <div class="q-nav">
+          <button type="button" class="q-back" id="qBack" hidden>Back</button>
+          <button type="submit" class="btn btn-primary" id="qNext" disabled>Continue</button>
+        </div>
+      </form>
+      <div class="q-result" id="qResult" hidden></div>
     </div>
   </div>
 </section>
@@ -796,12 +894,118 @@
     els.forEach(el => io.observe(el));
   }
 
-  // Calendly loads only when asked for, to keep the page fast
-  document.getElementById('loadCalendly').addEventListener('click', () => {
-    const panel = document.getElementById('bookingPanel');
-    panel.classList.add('loaded');
-    panel.innerHTML = '<iframe class="calendly-frame" title="Book a free Klaviyo audit with Vital Voice" src="https://calendly.com/contact-vitalvoicecopywriting/30min?hide_gdpr_banner=1&primary_color=4b2fb8"></iframe>';
+  // Qualifying form: four questions, then contact details. Qualified visitors get the
+  // calendar with their answers prefilled; everyone else is pointed to the checklist.
+  const CALENDLY = 'https://calendly.com/contact-vitalvoicecopywriting/30min';
+  const form = document.getElementById('qualify');
+  const steps = [...form.querySelectorAll('.q-step')];
+  const nextBtn = document.getElementById('qNext');
+  const backBtn = document.getElementById('qBack');
+  const bar = document.getElementById('qBar');
+  const count = document.getElementById('qCount');
+  const err = document.getElementById('qError');
+  const result = document.getElementById('qResult');
+  const panel = document.getElementById('bookingPanel');
+  let current = 0;
+
+  const stepValid = i => {
+    const radios = steps[i].querySelectorAll('input[type=radio]');
+    return radios.length ? [...radios].some(r => r.checked) : true;
+  };
+  const show = (i, moveFocus = true) => {
+    steps.forEach((st, n) => { st.hidden = n !== i; st.classList.toggle('q-anim', n === i); });
+    current = i;
+    bar.style.width = ((i + 1) / steps.length * 100) + '%';
+    count.textContent = 'Question ' + (i + 1) + ' of ' + steps.length;
+    backBtn.hidden = i === 0;
+    nextBtn.textContent = i === steps.length - 1 ? 'Check my eligibility' : 'Continue';
+    nextBtn.disabled = !stepValid(i);
+    if (moveFocus) steps[i].querySelector('legend').focus({ preventScroll: true });
+  };
+  form.addEventListener('change', e => {
+    if (e.target.type === 'radio') nextBtn.disabled = !stepValid(current);
   });
+  backBtn.addEventListener('click', () => show(current - 1));
+
+  const fieldError = (input, msg) => {
+    input.setAttribute('aria-invalid', msg ? 'true' : 'false');
+    if (msg && !err.textContent) { err.textContent = msg; input.focus(); }
+  };
+  const validContact = () => {
+    err.textContent = '';
+    const name = document.getElementById('qName');
+    const email = document.getElementById('qEmail');
+    const store = document.getElementById('qStore');
+    fieldError(name, name.value.trim() ? '' : 'Enter your first name.');
+    fieldError(email, /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()) ? '' : 'Enter a valid email address, like you@yourbrand.com.');
+    fieldError(store, /\.[a-z]{2,}/i.test(store.value.trim()) ? '' : 'Enter your store address, like yourbrand.com.');
+    err.hidden = !err.textContent;
+    return !err.textContent;
+  };
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (current < steps.length - 1) { if (stepValid(current)) show(current + 1); return; }
+    if (!validContact()) return;
+    const d = Object.fromEntries(new FormData(form));
+    const qualified = d.revenue !== 'Under $30k' && d.klaviyo !== 'No plans' && d.timing !== 'Just exploring';
+    qualified ? showBooking(d) : showNotYet(d);
+  });
+
+  const esc = t => String(t).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+  function showBooking(d) {
+    // a1–a5 fill the custom questions on the Calendly event, in this order:
+    // store URL, monthly revenue, on Klaviyo, who runs email, timing.
+    const q = new URLSearchParams({
+      hide_gdpr_banner: '1', primary_color: '4b2fb8',
+      name: d.name.trim(), email: d.email.trim(),
+      a1: d.store.trim(), a2: d.revenue, a3: d.klaviyo, a4: d.role, a5: d.timing
+    });
+    form.hidden = true;
+    panel.classList.add('loaded');
+    result.hidden = false;
+    result.innerHTML =
+      '<div class="q-ok-head q-anim"><span class="q-ok-badge">You qualify</span>' +
+      '<h3>Pick a time for your free audit, ' + esc(d.name.trim()) + '</h3>' +
+      '<p>Your answers are already filled in. Times show in your own time zone.</p></div>' +
+      '<iframe class="calendly-frame" title="Book a free Klaviyo audit with Vital Voice" src="' + CALENDLY + '?' + q.toString() + '"></iframe>';
+    result.querySelector('h3').setAttribute('tabindex', '-1');
+    result.querySelector('h3').focus({ preventScroll: true });
+  }
+
+  function showNotYet(d) {
+    let head, body;
+    if (d.revenue === 'Under $30k') {
+      head = 'The full audit isn’t the best fit yet';
+      body = 'Our audits are built for brands doing $30k or more a month, where flow changes move the numbers quickly. The 7-Flow Revenue Checklist covers what to set up first, so you’re ready when you get there.';
+    } else if (d.klaviyo === 'No plans') {
+      head = 'Our audit is Klaviyo-specific';
+      body = 'We review flows, segments and campaigns inside Klaviyo, so there’s nothing for us to audit yet. The checklist still applies to any email platform.';
+    } else {
+      head = 'Start with the checklist';
+      body = 'If you’re still exploring, the 7-Flow Revenue Checklist is the fastest way to see where you stand. Come back for the audit when you’re ready to fix what it finds.';
+    }
+    form.hidden = true;
+    result.hidden = false;
+    result.innerHTML =
+      '<div class="q-anim"><h3 tabindex="-1">' + head + '</h3><p>' + body + '</p>' +
+      '<button class="btn btn-primary" type="button" id="toChecklist">Send me the checklist</button>' +
+      '<p class="alt">Think we’ve got this wrong? Email <span>contact@vitalvoicecopywriting.com</span> or <button type="button" class="q-restart" id="qRestart">change your answers</button>.</p></div>';
+    result.querySelector('h3').focus({ preventScroll: true });
+    document.getElementById('toChecklist').addEventListener('click', () => {
+      const m = document.querySelector('.signup');
+      m.querySelector('input[name=first_name]').value = d.name.trim();
+      m.querySelector('input[name=email]').value = d.email.trim();
+      m.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+      setTimeout(() => m.querySelector('button').focus({ preventScroll: true }), reduce ? 0 : 600);
+    });
+    document.getElementById('qRestart').addEventListener('click', () => {
+      result.hidden = true; result.innerHTML = ''; form.hidden = false; show(0);
+    });
+  }
+
+  show(0, false);
 
   // Footer year
   document.getElementById('year').textContent = new Date().getFullYear();
