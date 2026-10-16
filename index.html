@@ -313,10 +313,8 @@
     .footer-legal { width: 100%; padding-top: 1.5rem; border-top: 1px solid var(--ink-2); font-size: .88rem; }
 
     /* ── One orchestrated load moment: the highlighter marks sweep in ── */
-    .js .annotated mark { background-size: 0% 100%; background-repeat: no-repeat; transition: background-size .7s ease; }
+    .js .annotated mark { background-size: 0% 100%; background-repeat: no-repeat; transition: background-size .9s cubic-bezier(.65,0,.35,1); }
     .js .annotated.inked mark { background-size: 100% 100%; }
-    .js .annotated mark:nth-of-type(2) { transition-delay: .25s; }
-    .js .annotated mark:nth-of-type(3) { transition-delay: .5s; }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .js .annotated mark { transition: none; background-size: 100% 100%; }
@@ -342,6 +340,90 @@
       .nav a:not(.btn) { padding: .85rem 0; border-bottom: 1px solid var(--line); font-size: 1rem; }
       .nav .btn { margin-top: 1rem; padding: 1rem; }
       .hero-actions .btn { width: 100%; }
+    }
+
+    /* ═══════════ MOTION ═══════════
+       Principles: one orchestrated hero entrance, then quiet scroll reveals.
+       Long, soft easing; short distances. Content is visible if JS fails,
+       and everything is switched off for reduced-motion users. */
+    :root {
+      --ease-out: cubic-bezier(.16, 1, .3, 1);   /* expo-out: fast start, long settle */
+      --ease-soft: cubic-bezier(.4, 0, .2, 1);
+    }
+
+    /* Header settles once you scroll */
+    .site-header { transition: box-shadow .4s var(--ease-soft), background-color .4s var(--ease-soft); }
+    .site-header.scrolled { background: rgba(255,255,255,.92); box-shadow: 0 1px 0 var(--line), 0 10px 30px -18px rgba(16,27,51,.25); }
+
+    /* Buttons: a small lift that answers the pointer */
+    .btn { transition: background-color .2s var(--ease-soft), color .2s var(--ease-soft), transform .35s var(--ease-out), box-shadow .35s var(--ease-out); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 22px -10px rgba(45,85,230,.6); }
+    .btn:active { transform: translateY(0); transition-duration: .08s; }
+    .nav a:not(.btn) { transition: color .2s var(--ease-soft); }
+
+    /* Hero entrance (runs once on load) */
+    @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+    @keyframes wipe {
+      from { opacity: 0; transform: translateY(26px); clip-path: inset(0 0 100% 0); }
+      to   { opacity: 1; transform: none; clip-path: inset(0 0 -10% 0); }
+    }
+    @keyframes settle { from { opacity: 0; transform: translateY(34px) scale(.975); } to { opacity: 1; transform: none; } }
+    .js .hero .fit          { animation: rise   .9s var(--ease-out) .05s both; }
+    .js .hero h1            { animation: wipe  1.1s var(--ease-out) .15s both; }
+    .js .hero .lede         { animation: rise   .9s var(--ease-out) .35s both; }
+    .js .hero-actions       { animation: rise   .9s var(--ease-out) .45s both; }
+    .js .hero .reassure     { animation: rise   .9s var(--ease-out) .55s both; }
+    .js .annotated .email   { animation: settle 1.2s var(--ease-out) .35s both; }
+    .js .annotated .notes li { opacity: 0; transform: translateX(-8px); transition: opacity .6s var(--ease-out), transform .6s var(--ease-out); }
+    .js .annotated.inked .notes li { opacity: 1; transform: none; }
+    .js .annotated .notes { border-left-color: transparent; transition: border-color .8s var(--ease-soft) 1.3s; }
+    .js .annotated.inked .notes { border-left-color: var(--cobalt); }
+    .js .annotated .ref { transform: scale(0); transition: transform .5s var(--ease-out); }
+    .js .annotated.inked .ref { transform: scale(1); }
+
+    /* Scroll reveals: content shows by default; JS opts elements in */
+    .js [data-reveal] {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .9s var(--ease-out), transform .9s var(--ease-out);
+      transition-delay: var(--d, 0s);
+    }
+    .js [data-reveal].in { opacity: 1; transform: none; }
+
+    /* Step numbers draw their rule when revealed */
+    .step { border-top-color: transparent; position: relative; }
+    .step::before {
+      content: ''; position: absolute; left: 0; right: 0; top: -2px; height: 2px;
+      background: var(--highlight); transform-origin: left;
+    }
+    .js .step[data-reveal]::before { transform: scaleX(0); transition: transform 1.1s var(--ease-out); transition-delay: calc(var(--d, 0s) + .15s); }
+    .js .step[data-reveal].in::before { transform: scaleX(1); }
+
+    /* Sample emails lift slightly under the pointer */
+    .sample .email { transition: transform .5s var(--ease-out), box-shadow .5s var(--ease-out); }
+    .sample:hover .email { transform: translateY(-4px); box-shadow: 0 1px 0 var(--line), 0 30px 50px -28px rgba(16,27,51,.35); }
+
+    /* FAQ answers open smoothly where the browser supports it */
+    :root { interpolate-size: allow-keywords; }
+    .faq details::details-content {
+      height: 0; overflow: clip;
+      transition: height .45s var(--ease-out), content-visibility .45s allow-discrete;
+    }
+    .faq details[open]::details-content { height: auto; }
+    .faq summary::after { transition: transform .35s var(--ease-out), margin-top .35s var(--ease-out); }
+    .faq summary { transition: color .2s var(--ease-soft); }
+    .faq summary:hover { color: var(--cobalt); }
+
+    /* Booking panel swap */
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .calendly-frame { animation: fadeIn .6s var(--ease-soft) both; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .js [data-reveal], .js .annotated .notes li { opacity: 1 !important; transform: none !important; }
+      .js .annotated .ref, .js .step[data-reveal]::before { transform: none !important; }
+      .js .annotated .notes { border-left-color: var(--cobalt) !important; }
+      .faq details::details-content { height: auto; }
     }
   </style>
 </head>
@@ -703,10 +785,45 @@
     toggle.setAttribute('aria-expanded', 'false');
   }));
 
-  // Highlighter sweep on the hero email, once, shortly after load
-  window.addEventListener('load', () => {
-    setTimeout(() => document.getElementById('annotated').classList.add('inked'), 300);
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Hero: highlighter marks sweep in one after another, then the editor's notes appear
+  const annotated = document.getElementById('annotated');
+  annotated.querySelectorAll('mark').forEach((m, i) => m.style.transitionDelay = (i * 0.45) + 's');
+  annotated.querySelectorAll('.email .ref').forEach((r, i) => r.style.transitionDelay = (0.7 + i * 0.45) + 's');
+  annotated.querySelectorAll('.notes li').forEach((li, i) => {
+    li.style.transitionDelay = (1.4 + i * 0.12) + 's';
+    li.querySelector('.ref').style.transitionDelay = (1.4 + i * 0.12) + 's';
   });
+  setTimeout(() => annotated.classList.add('inked'), reduce ? 0 : 1100);
+
+  // Header gains a soft shadow once the page scrolls
+  const header = document.querySelector('.site-header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Scroll reveals: opt elements in, stagger siblings, trigger before they reach the screen
+  if (!reduce && 'IntersectionObserver' in window) {
+    const groups = [
+      'main > section:not(.hero) h2', 'main > section:not(.hero) .lede',
+      '.leak', '.offer', '.sample', '.step', '.principles li', '.founder',
+      '.faq', '.checklist', '.booking-panel'
+    ];
+    const els = document.querySelectorAll(groups.join(','));
+    els.forEach(el => {
+      el.setAttribute('data-reveal', '');
+      const sibs = [...el.parentElement.children].filter(c => c.matches(groups.join(',')));
+      const i = sibs.indexOf(el);
+      if (i > 0) el.style.setProperty('--d', Math.min(i, 4) * 0.09 + 's');
+    });
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -4% 0px' });
+    els.forEach(el => io.observe(el));
+  }
 
   // Calendly loads only when asked for, to keep the page fast
   document.getElementById('loadCalendly').addEventListener('click', () => {
