@@ -220,27 +220,13 @@
     .step h3 { font-size: 1.3rem; margin-top: .9rem; letter-spacing: -0.015em; }
     .step p { margin-top: .6rem; color: var(--on-ink-muted); }
 
-    /* ── Principles + founder ── */
+    /* ── Principles ── */
     .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 6vw, 5rem); align-items: start; }
     .principles { list-style: none; margin-top: 2.2rem; display: grid; gap: 1.6rem; }
     .principles h3 { font-size: 1.15rem; font-weight: 700; }
     .principles p { color: var(--slate); margin-top: .3rem; }
-    .founder {
-      background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-m);
-      padding: 2rem;
-    }
-    .founder-top { display: flex; gap: 1.2rem; align-items: center; }
-    .founder-photo {
-      width: 88px; height: 88px; border-radius: 50%; flex-shrink: 0;
-      background: var(--paper); border: 2px dashed var(--line);
-      display: flex; align-items: center; justify-content: center;
-      font-size: .7rem; color: var(--slate); text-align: center; line-height: 1.2;
-    }
-    .founder-name { font-weight: 700; font-size: 1.2rem; }
-    .founder-role { color: var(--slate); font-size: .95rem; }
-    .founder blockquote { font-family: var(--serif); font-size: 1.12rem; line-height: 1.7; margin-top: 1.4rem; color: #2A3347; }
-    .founder blockquote p + p { margin-top: .8rem; }
-    .placeholder { background: #FFF4C2; border-radius: 3px; padding: 0 .2em; }
+    .principles-row { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+    .principles-row li { border-top: 1px solid var(--line); padding-top: 1.3rem; }
 
     /* ── Lead magnet ── */
     .magnet {
@@ -325,7 +311,7 @@
       .hero .wrap, .two-col, .booking .wrap, .magnet { grid-template-columns: 1fr; }
       .offers { grid-template-columns: 1fr; }
       .samples { grid-template-columns: 1fr; max-width: 520px; }
-      .steps { grid-template-columns: 1fr; gap: 2rem; }
+      .steps, .principles-row { grid-template-columns: 1fr; gap: 2rem; }
       .leak { grid-template-columns: 1fr; }
     }
     @media (max-width: 760px) {
@@ -642,39 +628,24 @@
   </div>
 </section>
 
-<!-- HOW WE WORK + FOUNDER -->
+<!-- HOW WE WORK -->
 <section class="band" id="about">
-  <div class="wrap two-col">
-    <div>
-      <h2>A small team, held to one standard</h2>
-      <ul class="principles">
-        <li>
-          <h3>Copy before design</h3>
-          <p>Every email is written from your reviews, support tickets and product data, then designed around the words. No recycled templates.</p>
-        </li>
-        <li>
-          <h3>You talk to the strategist</h3>
-          <p>The person on your calls is the person planning your account and editing every email before it's scheduled.</p>
-        </li>
-        <li>
-          <h3>Measured in revenue</h3>
-          <p>We report on flow and campaign revenue from Klaviyo every month. Open rates are a diagnostic, not the goal.</p>
-        </li>
-      </ul>
-    </div>
-    <aside class="founder" aria-label="Founder">
-      <div class="founder-top">
-        <div class="founder-photo">Photo<br>[PLACEHOLDER]</div>
-        <div>
-          <div class="founder-name">Sumesan [SURNAME]</div>
-          <div class="founder-role">Founder and lead strategist</div>
-        </div>
-      </div>
-      <blockquote>
-        <p><span class="placeholder">[PLACEHOLDER: 2–3 sentences on your background and why you specialise in Klaviyo for Shopify brands.]</span></p>
-        <p>I lead strategy on every account and edit every email before it goes out, so the writing your customers read is held to one standard.</p>
-      </blockquote>
-    </aside>
+  <div class="wrap">
+    <h2>A small team, held to one standard</h2>
+    <ul class="principles principles-row">
+      <li>
+        <h3>Copy before design</h3>
+        <p>Every email is written from your reviews, support tickets and product data, then designed around the words. No recycled templates.</p>
+      </li>
+      <li>
+        <h3>You talk to the strategist</h3>
+        <p>The person on your calls is the person planning your account and editing every email before it's scheduled.</p>
+      </li>
+      <li>
+        <h3>Measured in revenue</h3>
+        <p>We report on flow and campaign revenue from Klaviyo every month. Open rates are a diagnostic, not the goal.</p>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -807,7 +778,7 @@
   if (!reduce && 'IntersectionObserver' in window) {
     const groups = [
       'main > section:not(.hero) h2', 'main > section:not(.hero) .lede',
-      '.leak', '.offer', '.sample', '.step', '.principles li', '.founder',
+      '.leak', '.offer', '.sample', '.step', '.principles li',
       '.faq', '.checklist', '.booking-panel'
     ];
     const els = document.querySelectorAll(groups.join(','));
