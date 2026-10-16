@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <script>document.documentElement.classList.add('js');</script>
   <title>Vital Voice Copywriting | Klaviyo Email & SMS for Shopify Brands</title>
-  <meta name="description" content="Vital Voice Copywriting helps Shopify brands using Klaviyo increase revenue through high-converting email and SMS flows, segmentation, and retention strategy." />
+  <meta name="description" content="Copy-led Klaviyo retention for Shopify brands doing $30k–$500k/month. Email and SMS flows, campaigns and segmentation — starting with a free Klaviyo Revenue Audit." />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="index, follow" />
   <link rel="icon" type="image/png" href="favi.png" />
@@ -54,7 +55,24 @@
       justify-content: space-between;
     }
 
-    .nav-logo img { height: 64px; display: block; }
+    .nav-logo a { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+    .nav-logo img { height: 40px; width: auto; display: block; }
+    .nav-wordmark { display: flex; flex-direction: column; line-height: 1.05; }
+    .nav-wordmark strong {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.01em;
+    }
+    .nav-wordmark span {
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #6b5a26;
+      margin-top: 0.2rem;
+    }
 
     .nav-links {
       display: flex;
@@ -138,7 +156,7 @@
       margin: 0 auto;
       padding: 6rem 2rem;
       display: grid;
-      grid-template-columns: 1fr 420px;
+      grid-template-columns: 1fr 380px;
       gap: 4rem;
       align-items: center;
     }
@@ -157,7 +175,7 @@
       padding: 0.4rem 1rem;
       border-radius: 100px;
       margin-bottom: 1.6rem;
-      animation: fadeUp 0.8s ease forwards;
+      animation: fadeUp 0.5s ease both;
     }
 
     .hero-badge::before {
@@ -176,13 +194,12 @@
 
     .hero h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      font-size: clamp(2.1rem, 4vw, 3.25rem);
       font-weight: 700;
       color: var(--white);
       line-height: 1.15;
       margin-bottom: 1.4rem;
-      animation: fadeUp 0.8s 0.15s ease forwards;
-      opacity: 0;
+      animation: fadeUp 0.5s 0.07s ease both;
     }
 
     .hero h1 em {
@@ -196,8 +213,7 @@
       max-width: 540px;
       margin-bottom: 2.2rem;
       line-height: 1.75;
-      animation: fadeUp 0.8s 0.3s ease forwards;
-      opacity: 0;
+      animation: fadeUp 0.5s 0.15s ease both;
     }
 
     .hero-actions {
@@ -205,8 +221,7 @@
       align-items: center;
       gap: 1.2rem;
       flex-wrap: wrap;
-      animation: fadeUp 0.8s 0.45s ease forwards;
-      opacity: 0;
+      animation: fadeUp 0.5s 0.23s ease both;
     }
 
     .btn-primary {
@@ -241,68 +256,150 @@
 
     .btn-secondary:hover { color: var(--gold); border-color: var(--gold); }
 
-    /* Hero stats card */
-    .hero-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(201,168,76,0.2);
-      border-radius: 12px;
-      padding: 2.2rem;
-      animation: fadeUp 0.8s 0.5s ease forwards;
-      opacity: 0;
-    }
-
-    .hero-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      color: var(--gold);
-      margin-bottom: 1.4rem;
-      font-weight: 600;
-    }
-
-    .stat-row {
-      display: flex;
-      flex-direction: column;
-      gap: 1.1rem;
-    }
-
-    .stat-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-
-    .stat-icon {
-      width: 36px;
-      height: 36px;
-      background: rgba(201,168,76,0.12);
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 1rem;
-    }
-
-    .stat-label {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.1rem;
-    }
-
-    .stat-value {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      color: var(--white);
-      font-weight: 700;
-    }
 
     .hero-divider {
       border: none;
       border-top: 1px solid rgba(255,255,255,0.08);
       margin: 1.2rem 0;
     }
+
+    .hero-micro {
+      margin-top: 1.4rem;
+      font-size: 0.85rem;
+      color: #a9b6c6;
+      letter-spacing: 0.01em;
+      animation: fadeUp 0.5s 0.3s ease both;
+    }
+    .hero-micro span { color: var(--gold); padding: 0 0.35rem; }
+
+    /* Hero visual: sample email on a phone + flow card */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      padding-bottom: 4.75rem;
+      animation: fadeUp 0.5s 0.25s ease both;
+    }
+
+    .phone {
+      width: 290px;
+      background: #0a1320;
+      border: 1px solid rgba(201,168,76,0.35);
+      border-radius: 34px;
+      padding: 12px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+    }
+
+    .phone-screen {
+      background: var(--white);
+      border-radius: 24px;
+      overflow: hidden;
+      color: var(--navy);
+    }
+
+    .mail-head {
+      padding: 1.1rem 1.1rem 0.8rem;
+      border-bottom: 1px solid #eee8db;
+    }
+    .mail-from { font-size: 0.72rem; color: #6a7684; }
+    .mail-from b { color: var(--navy); font-weight: 600; }
+    .mail-subject { font-weight: 700; font-size: 0.86rem; margin-top: 0.25rem; line-height: 1.3; }
+    .mail-preview { font-size: 0.72rem; color: #6a7684; margin-top: 0.15rem; }
+
+    .mail-body { padding: 1rem 1.1rem 1.2rem; }
+    .mail-brand {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-align: center;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding-bottom: 0.8rem;
+    }
+    .mail-hero-img {
+      height: 82px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #efe4cf 0%, #e3d2b0 55%, #d6bf93 100%);
+      margin-bottom: 0.9rem;
+      position: relative;
+    }
+    .mail-hero-img::after {
+      content: '';
+      position: absolute;
+      left: 50%; top: 50%;
+      width: 26px; height: 48px;
+      transform: translate(-50%, -50%);
+      background: #fffaf0;
+      border-radius: 6px 6px 4px 4px;
+      box-shadow: 0 4px 10px rgba(15,28,46,0.15);
+    }
+    .mail-body h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.02rem;
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+    }
+    .mail-body p { font-size: 0.74rem; color: #44505e; line-height: 1.55; margin-bottom: 0.55rem; }
+    .mail-btn {
+      display: block;
+      text-align: center;
+      background: var(--navy);
+      color: var(--cream);
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 0.6rem;
+      border-radius: 4px;
+      margin-top: 0.8rem;
+    }
+
+    .sample-tag {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 100px;
+      white-space: nowrap;
+      z-index: 2;
+    }
+
+    .flow-card {
+      position: absolute;
+      left: -2rem;
+      bottom: 0;
+      width: 230px;
+      background: var(--navy-mid);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 10px;
+      padding: 0.9rem 1rem;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+    }
+    .flow-card-title { font-size: 0.72rem; font-weight: 600; color: var(--cream); margin-bottom: 0.7rem; }
+    .flow-card-title span { color: var(--gold); }
+    .flow-steps { display: flex; align-items: center; justify-content: space-between; position: relative; }
+    .flow-steps::before {
+      content: '';
+      position: absolute;
+      left: 6px; right: 6px; top: 6px;
+      height: 1px;
+      background: rgba(201,168,76,0.45);
+    }
+    .flow-step { position: relative; text-align: center; font-size: 0.62rem; color: #a9b6c6; }
+    .flow-step i {
+      display: block;
+      width: 13px; height: 13px;
+      margin: 0 auto 0.3rem;
+      border-radius: 50%;
+      background: var(--navy-mid);
+      border: 2px solid var(--gold);
+    }
+    .flow-step.on i { background: var(--gold); }
 
     /* ─── SECTION WRAPPER ─── */
     .section {
@@ -710,21 +807,33 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .reveal {
+    /* Content is visible by default. It only fades in when JS is running,
+       starts before it reaches the screen, and is off for reduced motion. */
+    .js .reveal {
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
+      transform: translateY(12px);
+      transition: opacity 0.4s ease-out, transform 0.4s ease-out;
     }
 
-    .reveal.visible {
+    .js .reveal.visible {
       opacity: 1;
-      transform: translateY(0);
+      transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .js .reveal, .hero-badge, .hero h1, .hero-sub, .hero-actions, .hero-micro, .hero-visual {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
+      }
     }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; }
-      .hero-card { display: none; }
+      .hero-inner { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.25rem 5rem; }
+      .hero-visual { margin-top: 0.5rem; }
+      .flow-card { left: max(0px, calc(50% - 175px)); width: 215px; }
       .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .services-grid { grid-template-columns: 1fr; }
       .process-steps { grid-template-columns: 1fr; }
@@ -750,6 +859,7 @@
       }
       .about-features { grid-template-columns: 1fr; }
       .hero-actions { flex-direction: column; align-items: flex-start; }
+      .hero-badge { font-size: 0.66rem; letter-spacing: 0.07em; padding: 0.4rem 0.8rem; }
     }
   </style>
 </head>
@@ -759,13 +869,16 @@
 <header>
   <nav>
     <div class="nav-logo">
-      <a href="#"><img src="LOGO.png" alt="Vital Voice Copywriting Logo" /></a>
+      <a href="#" aria-label="Vital Voice Copywriting — home">
+        <img src="logo-mark.png" alt="" width="28" height="40" />
+        <span class="nav-wordmark"><strong>Vital Voice</strong><span>Copy-led Klaviyo retention</span></span>
+      </a>
     </div>
     <div class="nav-links" id="navLinks">
-      <a href="#about">About</a>
       <a href="#services">Services</a>
-      <a href="#how-it-works">Process</a>
-      <a href="#booking" class="nav-cta">Book a Free Audit</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#about">About</a>
+      <a href="#booking" class="nav-cta">Get your free audit</a>
     </div>
     <div class="hamburger" id="hamburger" onclick="toggleNav()">
       <span></span><span></span><span></span>
@@ -779,55 +892,54 @@
   <div class="hero-glow"></div>
   <div class="hero-inner">
     <div>
-      <div class="hero-badge">Shopify × Klaviyo Specialist</div>
-      <h1>Stop Leaving Revenue<br>on the Table With<br><em>Your Emails</em></h1>
+      <div class="hero-badge">For Shopify brands doing $30k–$500k/month</div>
+      <h1>Your customers already cost you to acquire. <em>Klaviyo should make them buy again.</em></h1>
       <p class="hero-sub">
-        I help Shopify brands turn Klaviyo email and SMS into a predictable revenue channel — through smarter segmentation, high-intent flows, and campaigns that actually convert.
+        We write and build the email and SMS flows, campaigns and segments that turn one-time buyers into repeat revenue. It starts with a free audit showing exactly where your account is leaking sales.
       </p>
       <div class="hero-actions">
         <a href="#booking" class="btn-primary">
-          Book a Free Audit
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 3l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Get my free Klaviyo Revenue Audit
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 7h12M8 3l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <a href="#services" class="btn-secondary">
-          See what I offer
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          See what we build
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M6 1v10M1 6l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
+      <p class="hero-micro">30-minute call<span>·</span>Your account reviewed before we speak<span>·</span>You keep the findings either way</p>
     </div>
-    <div class="hero-card">
-      <h3>What a great Klaviyo setup delivers</h3>
-      <div class="stat-row">
-        <div class="stat-item">
-          <div class="stat-icon">📧</div>
-          <div>
-            <div class="stat-label">Email Revenue Share</div>
-            <div class="stat-value">30–50%</div>
+
+    <!-- Hero visual: sample welcome email (fictional brand). Swap for a real Klaviyo screenshot after the first pilot. -->
+    <div class="hero-visual" aria-label="Sample welcome email written by Vital Voice for a fictional skincare brand">
+      <div style="position:relative;">
+        <div class="sample-tag">Sample · fictional brand</div>
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="mail-head">
+              <div class="mail-from"><b>Halden Skin</b> · Welcome flow, email 1</div>
+              <div class="mail-subject">You're in. Start with one product, not ten.</div>
+              <div class="mail-preview">The routine our happiest customers began with.</div>
+            </div>
+            <div class="mail-body">
+              <div class="mail-brand">Halden</div>
+              <div class="mail-hero-img"></div>
+              <h4>Most people buy three serums and quit in a week.</h4>
+              <p>Our best-reviewed customers did the opposite. They started with one product: the Daily Barrier Cream.</p>
+              <p>Use it morning and night for 14 days. If your skin doesn't feel calmer, we refund you. No return needed.</p>
+              <span class="mail-btn">Take 10% off your first order</span>
+            </div>
           </div>
         </div>
-        <hr class="hero-divider">
-        <div class="stat-item">
-          <div class="stat-icon">🔁</div>
-          <div>
-            <div class="stat-label">Flow Automation</div>
-            <div class="stat-value">Works 24/7</div>
-          </div>
-        </div>
-        <hr class="hero-divider">
-        <div class="stat-item">
-          <div class="stat-icon">📈</div>
-          <div>
-            <div class="stat-label">Without Extra Ad Spend</div>
-            <div class="stat-value">More LTV</div>
-          </div>
-        </div>
-        <hr class="hero-divider">
-        <div class="stat-item">
-          <div class="stat-icon">🎯</div>
-          <div>
-            <div class="stat-label">Targeting</div>
-            <div class="stat-value">Precision</div>
-          </div>
+      </div>
+      <div class="flow-card" aria-hidden="true">
+        <div class="flow-card-title">Welcome flow <span>· 5 emails</span></div>
+        <div class="flow-steps">
+          <div class="flow-step on"><i></i>Day 0</div>
+          <div class="flow-step"><i></i>Day 1</div>
+          <div class="flow-step"><i></i>Day 3</div>
+          <div class="flow-step"><i></i>Day 5</div>
+          <div class="flow-step"><i></i>Day 7</div>
         </div>
       </div>
     </div>
@@ -841,7 +953,7 @@
       <div class="about-text reveal">
         <span class="section-label">About</span>
         <h2 class="section-title" style="color:var(--white);">Built to grow your<br>Shopify brand — not your ad budget</h2>
-        <p class="section-sub">Vital Voice Copywriting is a specialised email and SMS marketing service for Shopify brands on Klaviyo. I focus on building the retention infrastructure that most brands never get right — so your revenue grows from the audience you already have.</p>
+        <p class="section-sub">Vital Voice Copywriting is a specialised email and SMS marketing service for Shopify brands on Klaviyo. We build the retention infrastructure most brands never get right — so your revenue grows from the audience you already have.</p>
         <p class="section-sub" style="margin-top:0.9rem;">No bloated agency retainers. No cookie-cutter templates. Just high-converting copy and flows built around your customers and their buying behaviour.</p>
         <div class="about-features">
           <div class="about-feature">
@@ -961,12 +1073,12 @@
       <div class="process-step reveal">
         <div class="step-num">01</div>
         <h3>Book Your Free Audit</h3>
-        <p>Schedule a 30-minute strategy call. I'll review your current Klaviyo setup before we speak so the conversation is immediately valuable.</p>
+        <p>Schedule a 30-minute strategy call. We review your Klaviyo account before we speak, so the call is about your numbers, not a generic pitch.</p>
       </div>
       <div class="process-step reveal">
         <div class="step-num">02</div>
         <h3>Revenue Opportunity Review</h3>
-        <p>I identify the exact gaps in your flows, segmentation, and campaigns — and show you the revenue they're costing you right now.</p>
+        <p>We show you the exact gaps in your flows, segments and campaigns, and what they're likely costing you each month.</p>
       </div>
       <div class="process-step reveal">
         <div class="step-num">03</div>
@@ -984,7 +1096,7 @@
       <div class="booking-info reveal">
         <span class="section-label">Free Strategy Call</span>
         <h2 class="section-title">Book your free<br>Klaviyo Revenue Audit</h2>
-        <p class="section-sub">Claim a free 30-minute session. I'll personally review your Klaviyo account and show you exactly where revenue is being left behind — no pitch, no obligation.</p>
+        <p class="section-sub">Claim a free 30-minute session. We review your Klaviyo account and show you exactly where revenue is being left behind. No pitch, no obligation.</p>
         <ul class="booking-points">
           <li>
             <span class="check">✓</span>
@@ -1048,22 +1160,29 @@
   <img src="LOGO.png" alt="Vital Voice Copywriting" />
   <p><a href="mailto:contact@vitalvoicecopywriting.com">contact@vitalvoicecopywriting.com</a></p>
   <p><a href="https://www.instagram.com/vitalvoice_copywriting" target="_blank" rel="noopener">Instagram</a></p>
-  <p style="margin-top:1rem;">© 2025 Vital Voice Copywriting. All rights reserved.</p>
+  <p style="margin-top:1rem;">© <span id="year">2026</span> Vital Voice Copywriting. All rights reserved.</p>
 </footer>
 
 <script>
-  // Scroll reveal
+  // Scroll reveal: triggers before elements reach the screen, no stagger delay,
+  // and shows everything immediately if IntersectionObserver isn't supported.
   const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px 15% 0px' });
+    reveals.forEach(el => observer.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('visible'));
+  }
 
-  reveals.forEach(el => observer.observe(el));
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
 
   // Mobile nav
   function toggleNav() {
