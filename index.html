@@ -24,8 +24,8 @@
       --ink-2: #1B2A4A;      /* raised surfaces on ink */
       --slate: #535D72;      /* secondary text */
       --line: #DFE3EA;       /* borders on paper */
-      --cobalt: #2D55E6;     /* actions, editor's notes */
-      --cobalt-dark: #1F42C4;
+      --cobalt: #4B2FB8;     /* actions, editor's notes */
+      --cobalt-dark: #3A2296;
       --highlight: #FFE36E;  /* highlighter marks only */
       --on-ink-muted: #AEB8CC;
 
@@ -357,7 +357,7 @@
 
     /* Buttons: a small lift that answers the pointer */
     .btn { transition: background-color .2s var(--ease-soft), color .2s var(--ease-soft), transform .35s var(--ease-out), box-shadow .35s var(--ease-out); }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 22px -10px rgba(45,85,230,.6); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 22px -10px rgba(75,47,184,.5); }
     .btn:active { transform: translateY(0); transition-duration: .08s; }
     .nav a:not(.btn) { transition: color .2s var(--ease-soft); }
 
@@ -829,7 +829,7 @@
   document.getElementById('loadCalendly').addEventListener('click', () => {
     const panel = document.getElementById('bookingPanel');
     panel.classList.add('loaded');
-    panel.innerHTML = '<iframe class="calendly-frame" title="Book a free Klaviyo audit with Vital Voice" src="https://calendly.com/contact-vitalvoicecopywriting/30min?hide_gdpr_banner=1&primary_color=2d55e6"></iframe>';
+    panel.innerHTML = '<iframe class="calendly-frame" title="Book a free Klaviyo audit with Vital Voice" src="https://calendly.com/contact-vitalvoicecopywriting/30min?hide_gdpr_banner=1&primary_color=4b2fb8"></iframe>';
   });
 
   // Footer year
