@@ -204,6 +204,35 @@
     .offer .price { margin-top: auto; padding-top: 1.6rem; font-size: .92rem; color: var(--on-ink-muted); }
     .offer.lead .price { color: var(--slate); }
 
+
+    /* ── Services: main offer + copy packages ── */
+    .tier-head { margin-top: 3rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: .4rem 1.2rem; }
+    .tier-head h3 { font-size: 1.15rem; font-weight: 700; color: var(--highlight); }
+    .tier-head p { color: var(--on-ink-muted); font-size: .98rem; }
+    .on-ink .tier-head + .offers { margin-top: 1.2rem; grid-template-columns: 1.15fr 1fr; }
+    .offers-cta { margin-top: 1.6rem; }
+    .copy-panel {
+      margin-top: 4rem; padding-top: 2.5rem; border-top: 1px solid rgba(255,255,255,.14);
+      display: grid; grid-template-columns: 1fr 2.2fr; gap: 2rem 3rem; align-items: start;
+    }
+    .copy-intro h3 { font-size: 1.5rem; letter-spacing: -0.02em; }
+    .copy-intro p { color: var(--on-ink-muted); margin-top: .7rem; }
+    .packages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .pkg { border: 1px solid rgba(255,255,255,.16); border-radius: var(--radius-m); padding: 1.3rem 1.2rem; display: flex; flex-direction: column; }
+    .pkg h4 { font-size: 1.08rem; font-weight: 700; }
+    .pkg-kind { font-size: .85rem; color: var(--on-ink-muted); margin-top: .15rem; }
+    .pkg p:not(.pkg-kind):not(.pkg-price) { font-size: .95rem; color: #D5DBE7; margin-top: .7rem; }
+    .pkg-price { margin-top: auto; padding-top: 1rem; font-weight: 600; }
+    .ph { background: var(--highlight); color: var(--ink); padding: 0 .3em; border-radius: 3px; }
+    .copy-cta { grid-column: 2; display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; }
+    .copy-cta span { color: var(--on-ink-muted); font-size: .92rem; user-select: all; }
+    @media (max-width: 960px) {
+      .on-ink .tier-head + .offers { grid-template-columns: 1fr; }
+      .copy-panel { grid-template-columns: 1fr; }
+      .packages { grid-template-columns: 1fr; }
+      .copy-cta { grid-column: 1; }
+    }
+
     /* ── Samples ── */
     .samples { margin-top: 3rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: start; }
     .sample .email-body { font-size: .95rem; padding: 1.2rem 1.2rem 1.3rem; }
@@ -571,7 +600,12 @@
 <section class="band on-ink" id="services">
   <div class="wrap">
     <h2>Three ways to work with us</h2>
-    <p class="lede">Most brands start with a Flow Build, then move to monthly retention once the core flows are earning.</p>
+    <p class="lede">Full-service retention starts with a free audit, so we know exactly what your account needs. If you only need the words, our copy packages start smaller.</p>
+
+    <div class="tier-head">
+      <h3>Done-for-you retention</h3>
+      <p>For Shopify brands doing $30k+ a month. Starts with your free Klaviyo audit.</p>
+    </div>
     <div class="offers">
       <article class="offer lead">
         <h3>Flow Build</h3>
@@ -598,17 +632,37 @@
         </ul>
         <p class="price">Monthly retainer, quoted after your audit</p>
       </article>
-      <article class="offer">
-        <h3>Copy Only</h3>
-        <p class="kind">For brands with a designer</p>
-        <p class="desc">You handle design and building. We write the words your customers read.</p>
-        <ul>
-          <li>Subject lines and preview text</li>
-          <li>Flow and campaign emails</li>
-          <li>SMS messages</li>
-        </ul>
-        <p class="price">Per project or monthly</p>
-      </article>
+    </div>
+    <div class="offers-cta">
+      <a href="#audit" class="btn btn-primary">See if you qualify for a free audit</a>
+    </div>
+
+    <div class="copy-panel" id="copy-packages">
+      <div class="copy-intro">
+        <h3>Email copy packages</h3>
+        <p>You handle design and sending. We write the emails and SMS your customers read. No audit needed, so it suits brands under $30k a month or teams with their own designer.</p>
+      </div>
+      <div class="packages">
+        <div class="pkg">
+          <h4>Campaign Copy</h4>
+          <p class="pkg-kind">Monthly</p>
+          <p>4 campaign emails a month, with subject lines and preview text.</p>
+          <p class="pkg-price"><span class="ph">[PRICE]</span> a month</p>
+        </div>
+        <div class="pkg">
+          <h4>Campaign + SMS</h4>
+          <p class="pkg-kind">Monthly</p>
+          <p>8 campaign emails a month, plus matching SMS for each send.</p>
+          <p class="pkg-price"><span class="ph">[PRICE]</span> a month</p>
+        </div>
+        <div class="pkg">
+          <h4>Flow Copy Pack</h4>
+          <p class="pkg-kind">One-off</p>
+          <p>Copy for your welcome, abandoned checkout and post-purchase flows, ready to paste into Klaviyo.</p>
+          <p class="pkg-price"><span class="ph">[PRICE]</span> once</p>
+        </div>
+      </div>
+      <p class="copy-cta"><a class="btn btn-ghost" href="mailto:contact@vitalvoicecopywriting.com?subject=Copy%20packages">Ask about copy packages</a> <span>or email contact@vitalvoicecopywriting.com</span></p>
     </div>
   </div>
 </section>
@@ -1046,10 +1100,11 @@
   }
 
   function showNotYet(d) {
-    let head, body;
+    let head, body, extra = '';
     if (d.revenue === 'Under $30k') {
-      head = 'The full audit isn’t the best fit yet';
-      body = 'Our audits are built for brands doing $30k or more a month, where flow changes move the numbers quickly. The 7-Flow Revenue Checklist covers what to set up first, so you’re ready when you get there.';
+      head = 'Our copy packages are a better fit right now';
+      body = 'The full audit is built for brands doing $30k or more a month. At your stage, our email copy packages get you expert-written emails without a full retainer, and the 7-Flow Revenue Checklist covers what to set up first.';
+      extra = '<a class="btn btn-ghost" style="margin-top:.7rem;width:100%;color:var(--ink);border-color:var(--ink)" href="#copy-packages">See copy packages</a>';
     } else if (d.klaviyo === 'No plans') {
       head = 'Our audit is Klaviyo-specific';
       body = 'We review flows, segments and campaigns inside Klaviyo, so there’s nothing for us to audit yet. The checklist still applies to any email platform.';
@@ -1061,7 +1116,7 @@
     result.hidden = false;
     result.innerHTML =
       '<div class="q-anim"><h3 tabindex="-1">' + head + '</h3><p>' + body + '</p>' +
-      '<button class="btn btn-primary" type="button" id="toChecklist">Send me the checklist</button>' +
+      '<button class="btn btn-primary" type="button" id="toChecklist">Send me the checklist</button>' + extra +
       '<p class="alt">Think we’ve got this wrong? Email <span>contact@vitalvoicecopywriting.com</span> or <button type="button" class="q-restart" id="qRestart">change your answers</button>.</p></div>';
     result.querySelector('h3').focus({ preventScroll: true });
     document.getElementById('toChecklist').addEventListener('click', () => {
