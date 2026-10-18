@@ -259,6 +259,41 @@
     .principles-row { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; max-width: 900px; }
     .principles-row li { border-top: 1px solid var(--line); padding-top: 1.3rem; }
 
+    /* ── Founder ── */
+    .founder { display: grid; grid-template-columns: minmax(0, 380px) minmax(0, 1fr); gap: clamp(2.5rem, 6vw, 5.5rem); align-items: center; }
+    .founder-photo { position: relative; margin: 0; }
+    .founder-photo img {
+      display: block; width: 100%; height: auto; aspect-ratio: 720 / 897; object-fit: cover;
+      border-radius: var(--radius-m); background: var(--ink);
+      box-shadow: 0 30px 60px -30px rgba(16,27,51,.55);
+    }
+    .founder-photo figcaption {
+      position: absolute; left: 1rem; bottom: 1rem;
+      background: rgba(16,27,51,.82); color: var(--white);
+      backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius-s);
+      padding: .55rem .8rem; font-size: .82rem; line-height: 1.35;
+    }
+    .founder-photo figcaption b { display: block; font-size: .95rem; }
+    .founder-photo figcaption span { color: var(--on-ink-muted); }
+    .eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--cobalt); margin-bottom: 1rem; }
+    .founder-note p { font-family: var(--serif); font-size: 1.12rem; line-height: 1.7; color: #2A3347; max-width: 58ch; margin-top: 1.1rem; }
+    .founder-note p.eyebrow { font-family: var(--sans); font-size: .8rem; line-height: 1.4; color: var(--cobalt); margin-top: 0; }
+    .founder-sign { display: flex; align-items: center; flex-wrap: wrap; gap: .9rem 1.5rem; margin-top: 1.8rem; padding-top: 1.4rem; border-top: 1px solid var(--line); }
+    .founder-sign .who b { display: block; font-size: 1.05rem; }
+    .founder-sign .who span { color: var(--slate); font-size: .92rem; }
+    .li-link { display: inline-flex; align-items: center; gap: .5rem; font-weight: 600; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 2px; transition: color .2s, border-color .2s; }
+    .li-link:hover { color: var(--cobalt); border-color: var(--cobalt); }
+    .li-link svg { flex: none; }
+    .founder-actions { margin-top: 1.8rem; }
+    .about-how { margin-top: clamp(4rem, 8vw, 6rem); }
+    .about-how h3.sub { font-size: clamp(1.4rem, 2.2vw, 1.8rem); font-weight: 700; letter-spacing: -0.02em; }
+    @media (max-width: 860px) {
+      .founder { grid-template-columns: 1fr; }
+      .founder-photo { max-width: 400px; }
+    }
+    @media (max-width: 760px) { .founder-actions .btn { width: 100%; } }
+
     /* ── Lead magnet ── */
     .magnet {
       background: var(--lilac-wash);
@@ -514,6 +549,7 @@
       <a href="#what-we-fix">What we fix</a>
       <a href="#services">Services</a>
       <a href="#samples">Sample emails</a>
+      <a href="#about">About</a>
       <a href="#faq">FAQ</a>
       <a href="#audit" class="btn btn-primary">Get your free audit</a>
     </nav>
@@ -742,7 +778,35 @@
 <!-- HOW WE WORK -->
 <section class="band" id="about">
   <div class="wrap">
-    <h2>A small team, held to one standard</h2>
+    <div class="founder">
+      <figure class="founder-photo">
+        <picture>
+          <source srcset="sumesan-naidoo-founder.webp" type="image/webp" />
+          <img src="sumesan-naidoo-founder.jpg" alt="Sumesan Naidoo, founder of Vital Voice" width="720" height="897" loading="lazy" decoding="async" />
+        </picture>
+        <figcaption><b>Sumesan Naidoo</b><span>Founder, Vital Voice</span></figcaption>
+      </figure>
+
+      <div class="founder-note">
+        <p class="eyebrow">From the founder</p>
+        <h2>You'll deal with the person accountable for your numbers</h2>
+        <p>I started Vital Voice in 2024 after seeing the same pattern in Shopify brand after Shopify brand. Ads do the expensive work of winning a first order, then the welcome flow gets written in an afternoon and every campaign says "sale".</p>
+        <p>Every audit starts with me. I go through your flows, segments and campaign history before we speak, and I review every email before it reaches your list. If the revenue doesn't move, I'm the one you hold to it.</p>
+        <div class="founder-sign">
+          <div class="who"><b>Sumesan Naidoo</b><span>Founder · South Africa, working with brands worldwide</span></div>
+          <a class="li-link" href="https://www.linkedin.com/in/PLACEHOLDER" target="_blank" rel="noopener" aria-label="Sumesan Naidoo on LinkedIn (opens in a new tab)">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            Connect on LinkedIn
+          </a>
+        </div>
+        <div class="founder-actions">
+          <a href="#audit" class="btn btn-primary">Book your free Klaviyo audit with me</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-how">
+    <h3 class="sub">A small team, held to one standard</h3>
     <ul class="principles principles-row">
       <li>
         <h3>Copy before design</h3>
@@ -753,6 +817,7 @@
         <p>We report on flow and campaign revenue from Klaviyo every month. Open rates are a diagnostic, not the goal.</p>
       </li>
     </ul>
+    </div>
   </div>
 </section>
 
@@ -895,6 +960,7 @@
       <a href="#what-we-fix">What we fix</a>
       <a href="#services">Services</a>
       <a href="#samples">Sample emails</a>
+      <a href="#about">About</a>
       <a href="#faq">FAQ</a>
       <a href="mailto:contact@vitalvoicecopywriting.com">Email us</a>
       <a href="https://www.linkedin.com/company/vitalvoicecopywriting" target="_blank" rel="noopener">LinkedIn</a>
@@ -940,7 +1006,7 @@
     const groups = [
       'main > section:not(.hero) h2', 'main > section:not(.hero) .lede',
       '.leak', '.offer', '.sample', '.step', '.principles li',
-      '.faq', '.checklist', '.booking-panel'
+      '.faq', '.checklist', '.booking-panel', '.founder-photo', '.founder-note > *'
     ];
     const els = document.querySelectorAll(groups.join(','));
     els.forEach(el => {
